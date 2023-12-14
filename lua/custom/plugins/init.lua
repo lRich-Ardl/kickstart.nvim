@@ -44,6 +44,25 @@ return {
 			vim.cmd('colorscheme dracula')
 		end
 	},
+	{
+		'mfussenegger/nvim-dap-python',
+		dependencies = {
+			'mfussenegger/nvim-dap',
+		},
+		config = function()
+			require('dap-python').setup('/home/dev/.pyenv/shims/python')
+		end
+	},
+	-- { -- setup in kickstart own file debug.lua
+	-- 	'leoluz/nvim-dap-go',
+	-- 	dependencies = {
+	-- 		'mfussenegger/nvim-dap',
+	-- 	},
+	-- 	config = function()
+	-- 		require('dap-go').setup()
+	-- 	end
+	-- },
+	{ 'tpope/vim-sensible' },
 	{ 'tpope/vim-dotenv' },
 	{ 'tpope/vim-dadbod' },
 	{ 'kristijanhusak/vim-dadbod-ui' },

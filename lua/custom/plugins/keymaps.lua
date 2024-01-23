@@ -4,7 +4,7 @@ vim.keymap.set("n", "<leader>t", ':tabnew | :Ex<CR>')
 
 -- keymap toggle virtual text diagnostics
 vim.keymap.set("n", "<leader>vd",
-	":lua vim.diagnostic.config({virtual_text = not vim.diagnostic.config().virtual_text})<CR>")
+    ":lua vim.diagnostic.config({virtual_text = not vim.diagnostic.config().virtual_text})<CR>")
 
 -- highlight Comment in code and then back to grey
 vim.keymap.set("n", "<localleader>cc", ":hi! link Comment DraculaGreenBold<CR>")
@@ -26,14 +26,14 @@ vim.keymap.set("n", "<localleader>di", dap.step_into, { desc = 'Debug: Step Into
 vim.keymap.set("n", "<localleader>dO", dap.step_out, { desc = 'Debug: Step Out' })
 -- vim.keymap.set("n", "<localleader>dr", dap.restart, { desc = 'Debug: Restart' })
 vim.keymap.set("n", "<localleader>dr", function()
-	vim.cmd.update()
-	dap.run_last()
+    vim.cmd.update()
+    dap.run_last()
 end, { desc = 'Debug: Restart' })
 
 vim.keymap.set("n", "<localleader>b", dap.toggle_breakpoint,
-	{ desc = 'Debug: Toggle Breakpoint' })
+    { desc = 'Debug: Toggle Breakpoint' })
 vim.keymap.set('n', '<localleader>B', function()
-	dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+    dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
 end, { desc = 'Debug: Set Breakpoint' })
 
 -- copilot

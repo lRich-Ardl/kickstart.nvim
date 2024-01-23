@@ -63,6 +63,7 @@ return {
 	-- 	end
 	-- },
 	{ 'tpope/vim-sensible' },
+	{ 'tpope/vim-obsession' },
 	{ 'tpope/vim-dotenv' },
 	{ 'tpope/vim-dadbod' },
 	{ 'kristijanhusak/vim-dadbod-ui' },

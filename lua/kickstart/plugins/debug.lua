@@ -81,6 +81,33 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
+    -- c / c++ / rust debug setup
+    local rust_binary = function()
+      local full_path = vim.fn.getcwd()
+      local path_components = vim.split(full_path, "/")
+      local folder_name = path_components[#path_components]
+      return 'target/debug/' .. folder_name
+    end
+
+    dap.adapters.cppdbg = {
+      id = 'cppdbg',
+      type = 'executable',
+      command = vim.fn.expand('$HOME') .. '/.local/share/nvim/mason/bin/OpenDebugAD7',
+    }
+
+    dap.configurations.rust = {
+      {
+        name = "Launch file",
+        type = "cppdbg",
+        request = "launch",
+        program = function()
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/' .. rust_binary(), 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopAtEntry = true,
+      },
+    }
+
     -- Install golang specific config
     require('dap-go').setup()
   end,

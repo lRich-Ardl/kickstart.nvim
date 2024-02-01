@@ -20,10 +20,12 @@ vim.keymap.set("n", "<leader>gl", vim.cmd.Gclog)
 
 -- dap
 local dap = require 'dap'
+local dapui = require 'dapui'
 vim.keymap.set("n", "<localleader>dc", dap.continue, { desc = 'Debug: Start/Continue' })
 vim.keymap.set("n", "<localleader>do", dap.step_over, { desc = 'Debug: Step Over' })
 vim.keymap.set("n", "<localleader>di", dap.step_into, { desc = 'Debug: Step Into' })
 vim.keymap.set("n", "<localleader>dO", dap.step_out, { desc = 'Debug: Step Out' })
+vim.keymap.set("n", "<localleader>dt", dapui.close, { desc = 'Debug: Terminate' })
 -- vim.keymap.set("n", "<localleader>dr", dap.restart, { desc = 'Debug: Restart' })
 vim.keymap.set("n", "<localleader>dr", function()
     vim.cmd.update()

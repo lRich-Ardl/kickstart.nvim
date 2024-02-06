@@ -18,6 +18,8 @@ vim.keymap.set("n", "<leader>st", ":belowright split term://bash<CR>")
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "<leader>gl", vim.cmd.Gclog)
 
+vim.keymap.set("n", "<localleader>ww", ':source ~/vimwiki/Session.vim<CR>')
+
 -- dap
 local dap = require 'dap'
 local dapui = require 'dapui'

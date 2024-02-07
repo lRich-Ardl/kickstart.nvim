@@ -1,5 +1,7 @@
 vim.opt.guicursor = ""
 
+vim.opt.spelling = "en_us"
+
 -- vim.opt.nu = true
 -- vim.opt.relativenumber = true
 

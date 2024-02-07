@@ -1,7 +1,5 @@
 vim.opt.guicursor = ""
 
-vim.opt.spelllang = "en_us"
-
 -- vim.opt.nu = true
 -- vim.opt.relativenumber = true
 
@@ -36,6 +34,6 @@ vim.opt.fillchars = { fold = " " }
 vim.opt.foldmethod = "indent"
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
-g.markdown_folding = 1 -- enable markdown folding
+vim.g.markdown_folding = 1 -- enable markdown folding
 
 return {}
